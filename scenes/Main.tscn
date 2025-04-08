@@ -7,4 +7,4 @@
 script = ExtResource("1_elqb8")
 
 [node name="Shelf" parent="." instance=ExtResource("2_rvslj")]
-position = Vector2(327, 225)
+position = Vector2(327, 159)
