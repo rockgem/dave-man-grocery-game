@@ -1,6 +1,9 @@
 extends Node2D
+class_name MainGame
 
+
+var score = 0
 
 
 func _ready() -> void:
-	pass
+	ManagerGame.global_main_ref = self
