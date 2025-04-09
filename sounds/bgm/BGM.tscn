@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7y5hqohnvbvl"]
+
+[ext_resource type="AudioStream" uid="uid://s14h2jfurkl8" path="res://sounds/bgm/step step step.ogg" id="1_xoqyy"]
+
+[node name="Bgm" type="Node"]
+process_mode = 3
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_xoqyy")
+autoplay = true
+bus = &"Music"

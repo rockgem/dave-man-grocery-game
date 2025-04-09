@@ -37,6 +37,8 @@ func _input(event: InputEvent) -> void:
 			slot.put_item(item_type)
 			ManagerGame.food_placed_on_shelf.emit()
 			
+			Sfx.play_sound('Ping')
+			
 			queue_free()
 
 

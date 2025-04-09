@@ -33,4 +33,4 @@ func generate_level():
 
 
 func on_food_placed_on_shelf():
-	ManagerGame.global_main_ref.score += 25
+	ManagerGame.global_ui_ref.animate_score(420)
