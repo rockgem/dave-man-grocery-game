@@ -1,10 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxi0hlu78sx6o"]
+[gd_scene load_steps=4 format=3 uid="uid://dxi0hlu78sx6o"]
 
 [ext_resource type="Script" uid="uid://gj7fib8xow5w" path="res://scenes/Ui.gd" id="1_agcvy"]
+[ext_resource type="Shader" uid="uid://cpjjfjfi5xsui" path="res://scenes/bg.gdshader" id="2_g3ve3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf3ad"]
+shader = ExtResource("2_g3ve3")
+shader_parameter/spin_rotation_speed = 2.0
+shader_parameter/move_speed = 2.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(0.383106, 0.514863, 0.722571, 1)
+shader_parameter/colour_2 = Color(0.287438, 0.354097, 0.771102, 1)
+shader_parameter/colour_3 = Color(0.086, 0.137, 0.145, 1)
+shader_parameter/contrast = 3.5
+shader_parameter/lighting = 0.4
+shader_parameter/spin_amount = 0.25
+shader_parameter/pixel_filter = 740.0
+shader_parameter/is_rotating = false
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_agcvy")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+material = SubResource("ShaderMaterial_cf3ad")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Popup" type="CanvasLayer" parent="."]
 layer = 102
