@@ -13,6 +13,7 @@ func _ready() -> void:
 		1: $Sprite2D.texture = load('res://reso/items/bread.tres')
 		2: $Sprite2D.texture = load('res://reso/items/strawberry.tres')
 		3: $Sprite2D.texture = load('res://reso/items/sugar.tres')
+		5: $Sprite2D.texture = load('res://reso/items/orange.tres')
 
 
 func _input(event: InputEvent) -> void:

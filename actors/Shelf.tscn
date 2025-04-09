@@ -15,19 +15,19 @@ script = ExtResource("2_bqca4")
 [node name="Line1" type="Node2D" parent="Slots"]
 
 [node name="Slot" parent="Slots/Line1" instance=ExtResource("2_ao3xq")]
-position = Vector2(-72, -58)
+position = Vector2(-72, -55)
 
 [node name="Slot2" parent="Slots/Line1" instance=ExtResource("2_ao3xq")]
-position = Vector2(-36, -58)
+position = Vector2(-36, -55)
 
 [node name="Slot3" parent="Slots/Line1" instance=ExtResource("2_ao3xq")]
-position = Vector2(-1, -58)
+position = Vector2(-1, -55)
 
 [node name="Slot4" parent="Slots/Line1" instance=ExtResource("2_ao3xq")]
-position = Vector2(35, -58)
+position = Vector2(35, -55)
 
 [node name="Slot5" parent="Slots/Line1" instance=ExtResource("2_ao3xq")]
-position = Vector2(71, -58)
+position = Vector2(71, -55)
 
 [node name="Line2" type="Node2D" parent="Slots"]
 position = Vector2(0, 53)

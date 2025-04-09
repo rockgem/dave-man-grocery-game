@@ -4,11 +4,12 @@ extends Area2D
 class_name Slot
 
 enum ITEM_TYPE{
-	MILK,
-	BREAD,
-	STRAWBERRY,
-	SUGAR,
-	VACANT
+	MILK, # 0
+	BREAD, # 1
+	STRAWBERRY, # 2
+	SUGAR, # 3
+	VACANT, # 4
+	ORANGE # 5
 }
 
 
@@ -24,6 +25,10 @@ func refresh_display():
 		$Sprite2D.texture = null
 	else:
 		$Sprite2D.texture = load("res://reso/items/%s.tres" % ITEM_TYPE.find_key(item_type))
+		
+		$Sprite2D2.texture = load("res://reso/items/%s.tres" % ITEM_TYPE.find_key(item_type))
+		$Sprite2D3.texture = load("res://reso/items/%s.tres" % ITEM_TYPE.find_key(item_type))
+		$Sprite2D4.texture = load("res://reso/items/%s.tres" % ITEM_TYPE.find_key(item_type))
 	
 	$Sprite2D.modulate.a = 1.0
 

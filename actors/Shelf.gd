@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func generate_level():
-	var values = [0, 1, 2, 3]
+	var values = [0, 1, 2, 3, 5]
 	values.shuffle()
 	
 	for i in 3:
