@@ -1,7 +1,7 @@
 @tool
 
 extends Area2D
-
+class_name Slot
 
 enum ITEM_TYPE{
 	MILK,
@@ -34,16 +34,16 @@ func put_item(item_type: int):
 	refresh_display()
 
 
-func highlight_item(texture):
-	if item_type == ITEM_TYPE.VACANT:
+func highlight(texture):
+	if item_type != ITEM_TYPE.VACANT:
 		return
 	
 	$Sprite2D.texture = texture
 	$Sprite2D.modulate.a = .5
 
 
-func remove_highlight_item():
-	if item_type == ITEM_TYPE.VACANT:
+func remove_highlight():
+	if item_type != ITEM_TYPE.VACANT:
 		return
 	
 	$Sprite2D.texture = null

@@ -2,6 +2,8 @@ extends Sprite2D
 
 
 func _ready() -> void:
+	ManagerGame.food_placed_on_shelf.connect(on_food_placed_on_shelf)
+	
 	await get_tree().process_frame
 	
 	generate_level()
@@ -28,3 +30,7 @@ func generate_level():
 			item.item_type = values[i]
 			
 			ManagerGame.global_main_ref.spawn_obj(item, p)
+
+
+func on_food_placed_on_shelf():
+	ManagerGame.global_main_ref.score += 25

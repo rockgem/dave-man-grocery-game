@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var item_type: int
 
-var first_slot_detected
+var first_slot_detected: Slot
 var is_dragging = false
 
 func _ready() -> void:
@@ -30,6 +30,14 @@ func _input(event: InputEvent) -> void:
 	
 	if event is InputEventScreenTouch and !event.pressed and is_dragging:
 		is_dragging = false
+		
+		if $Area2D.get_overlapping_areas().is_empty() == false:
+			var slot = $Area2D.get_overlapping_areas()[0]
+			
+			slot.put_item(item_type)
+			ManagerGame.food_placed_on_shelf.emit()
+			
+			queue_free()
 
 
 func _physics_process(delta: float) -> void:
@@ -42,9 +50,17 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	if $Area2D.get_overlapping_areas().is_empty() == false:
+	if $Area2D.get_overlapping_areas().is_empty() == false and is_dragging:
+		if first_slot_detected:
+			first_slot_detected.remove_highlight()
+		
 		first_slot_detected = $Area2D.get_overlapping_areas()[0]
+		
+		first_slot_detected.highlight($Sprite2D.texture)
 	else:
+		if first_slot_detected:
+			first_slot_detected.remove_highlight()
+		
 		first_slot_detected = null
 
 
