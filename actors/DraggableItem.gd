@@ -9,11 +9,15 @@ var is_dragging = false
 
 func _ready() -> void:
 	match item_type:
-		0: $Sprite2D.texture = load('res://reso/items/milk.tres')
+		0: 
+			$Sprite2D.texture = load('res://reso/items/milk.tres')
+			$Sprite2D.offset.y -= 16.0
 		1: $Sprite2D.texture = load('res://reso/items/bread.tres')
 		2: $Sprite2D.texture = load('res://reso/items/strawberry.tres')
 		3: $Sprite2D.texture = load('res://reso/items/sugar.tres')
-		5: $Sprite2D.texture = load('res://reso/items/orange.tres')
+		5:
+			$Sprite2D.texture = load('res://reso/items/orange.tres')
+			$Sprite2D.offset.y =- 26.0
 
 
 func _input(event: InputEvent) -> void:
