@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdgs0"]
 size = Vector2(32, 36)
 
-[node name="Slot" type="Area2D"]
+[node name="Slot" type="Area2D" groups=["Slot"]]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_hn5tt")

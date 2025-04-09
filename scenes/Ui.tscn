@@ -3,7 +3,11 @@
 [ext_resource type="Script" uid="uid://gj7fib8xow5w" path="res://scenes/Ui.gd" id="1_agcvy"]
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_agcvy")
+
+[node name="Popup" type="CanvasLayer" parent="."]
+layer = 102
 
 [node name="Score" type="Label" parent="."]
 offset_left = 27.0
@@ -39,6 +43,7 @@ offset_right = -5.0
 offset_bottom = 32.0
 
 [node name="LevelTimer" type="Timer" parent="."]
+process_mode = 1
 wait_time = 60.0
 autostart = true
 

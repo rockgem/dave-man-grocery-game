@@ -32,5 +32,19 @@ func generate_level():
 			ManagerGame.global_main_ref.spawn_obj(item, p)
 
 
+func has_vacant_slots() -> bool:
+	var has_vacant = false
+	for slot: Slot in get_tree().get_nodes_in_group("Slot"):
+		if slot.item_type == slot.ITEM_TYPE.VACANT:
+			has_vacant = true
+			
+			break
+	
+	return has_vacant
+
+
 func on_food_placed_on_shelf():
 	ManagerGame.global_ui_ref.animate_score(420)
+	
+	if has_vacant_slots() == false:
+		ManagerGame.game_over.emit()

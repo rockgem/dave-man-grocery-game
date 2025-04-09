@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://b20ilpl0ou4dj"]
+[gd_scene load_steps=3 format=3 uid="uid://b20ilpl0ou4dj"]
 
 [ext_resource type="Script" uid="uid://b48rw1qg1ihc0" path="res://actors/ui/GameOverView.gd" id="1_27m5g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27m5g"]
+bg_color = Color(0.169245, 0.169245, 0.169245, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="GameOverView" type="Control"]
 layout_mode = 3
@@ -22,6 +29,7 @@ offset_right = -59.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_27m5g")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
@@ -72,4 +80,5 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Retry"
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]
