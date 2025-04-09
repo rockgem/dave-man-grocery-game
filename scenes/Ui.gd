@@ -26,10 +26,11 @@ func animate_score(new_score):
 
 
 func _on_level_timer_timeout() -> void:
-	pass # Replace with function body.
+	ManagerGame.game_over.emit(false)
 
 
-func on_game_over():
+func on_game_over(is_win: bool):
 	var i = load('res://actors/ui/GameOverView.tscn').instantiate()
+	i.is_win = is_win
 	
 	pop_to_ui(i)
