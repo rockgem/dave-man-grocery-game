@@ -32,14 +32,23 @@ func _input(event: InputEvent) -> void:
 		is_dragging = false
 		
 		if $Area2D.get_overlapping_areas().is_empty() == false:
-			var slot = $Area2D.get_overlapping_areas()[0]
+			var slot = null
 			
-			slot.put_item(item_type)
-			ManagerGame.food_placed_on_shelf.emit()
+			for area in $Area2D.get_overlapping_areas():
+				if area.item_type != area.ITEM_TYPE.VACANT:
+					continue
+				else:
+					slot = area
+					break
 			
-			Sfx.play_sound('Ping')
 			
-			queue_free()
+			if slot:
+				slot.put_item(item_type)
+				ManagerGame.food_placed_on_shelf.emit()
+				
+				Sfx.play_sound('Ping')
+				
+				queue_free()
 
 
 func _physics_process(delta: float) -> void:
