@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blmcr"]
 
-[node name="DraggableItem" type="RigidBody2D"]
+[node name="DraggableItem" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_na0ap")
