@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi3robgqdclie"]
+
+[ext_resource type="Texture2D" uid="uid://bnx5vvlpiit7s" path="res://reso/items/bread.tres" id="1_blmcr"]
+[ext_resource type="Script" uid="uid://b5lm5kc8sqpc6" path="res://actors/DraggableItem.gd" id="1_na0ap"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blmcr"]
+
+[node name="DraggableItem" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_na0ap")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("1_blmcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_blmcr")

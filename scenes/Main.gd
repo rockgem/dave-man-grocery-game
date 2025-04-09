@@ -7,3 +7,9 @@ var score = 0
 
 func _ready() -> void:
 	ManagerGame.global_main_ref = self
+
+
+func spawn_obj(instance, g_pos):
+	instance.global_position = g_pos
+	
+	add_child(instance)
