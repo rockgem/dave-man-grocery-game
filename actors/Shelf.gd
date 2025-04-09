@@ -47,4 +47,4 @@ func on_food_placed_on_shelf():
 	ManagerGame.global_ui_ref.animate_score(420)
 	
 	if has_vacant_slots() == false:
-		ManagerGame.game_over.emit()
+		ManagerGame.game_over.emit(true)
