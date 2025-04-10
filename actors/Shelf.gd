@@ -71,7 +71,10 @@ func generate_level():
 	# assigns the item's indexes to the vacant slot's index
 	# this way, only a certain item can be inserted into a certain slot! ( see DraggableItem.gd )
 	count = 0
-	for item in get_tree().get_nodes_in_group("DraggableItem"):
+	var items = get_tree().get_nodes_in_group("DraggableItem")
+	items.shuffle()
+	
+	for item in items:
 		item.idx = vacants[count].idx
 		
 		count += 1
