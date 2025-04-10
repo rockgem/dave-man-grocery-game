@@ -15,7 +15,9 @@ func _ready() -> void:
 			$Sprite2D.offset.y -= 16.0
 		1: $Sprite2D.texture = load('res://reso/items/bread.tres')
 		2: $Sprite2D.texture = load('res://reso/items/strawberry.tres')
-		3: $Sprite2D.texture = load('res://reso/items/flour.tres')
+		3: 
+			$Sprite2D.texture = load('res://reso/items/flour.tres')
+			$Sprite2D.offset.y =- 20.0
 		5:
 			$Sprite2D.texture = load('res://reso/items/orange.tres')
 			$Sprite2D.offset.y =- 26.0
