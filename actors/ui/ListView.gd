@@ -1,12 +1,27 @@
 extends Control
 
 func _ready() -> void:
+	ManagerGame.food_placed_on_shelf.connect(refresh_check_displays)
+	
 	$TextureRect.position.x = -278.0
 	
 	var t = create_tween()
 	t.tween_property($TextureRect, 'position:x', -12.0, .3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	
 	load_items()
+
+
+func refresh_check_displays():
+	for i in ManagerGame.global_main_ref.shelf.jam:
+		$TextureRect/Jam.get_child(i).is_active = true
+	for i in ManagerGame.global_main_ref.shelf.bread:
+		$TextureRect/Bread.get_child(i).is_active = true
+	for i in ManagerGame.global_main_ref.shelf.milk:
+		$TextureRect/Milk.get_child(i).is_active = true
+	for i in ManagerGame.global_main_ref.shelf.flour:
+		$TextureRect/Flour.get_child(i).is_active = true
+	for i in ManagerGame.global_main_ref.shelf.juice:
+		$TextureRect/Juice.get_child(i).is_active = true
 
 
 func load_items():
@@ -48,16 +63,7 @@ func load_items():
 	
 	await get_tree().process_frame
 	
-	for i in ManagerGame.global_main_ref.shelf.jam:
-		$TextureRect/Jam.get_child(i).is_active = true
-	for i in ManagerGame.global_main_ref.shelf.bread:
-		$TextureRect/Bread.get_child(i).is_active = true
-	for i in ManagerGame.global_main_ref.shelf.milk:
-		$TextureRect/Milk.get_child(i).is_active = true
-	for i in ManagerGame.global_main_ref.shelf.flour:
-		$TextureRect/Flour.get_child(i).is_active = true
-	for i in ManagerGame.global_main_ref.shelf.juice:
-		$TextureRect/Juice.get_child(i).is_active = true
+	refresh_check_displays()
 
 
 func _on_close_pressed() -> void:
