@@ -13,6 +13,7 @@ script = ExtResource("2_bqca4")
 [node name="Slots" type="Node2D" parent="."]
 
 [node name="Line1" type="Node2D" parent="Slots"]
+position = Vector2(0, -7)
 
 [node name="Slot" parent="Slots/Line1" instance=ExtResource("2_ao3xq")]
 position = Vector2(-72, -55)
