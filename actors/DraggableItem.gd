@@ -53,6 +53,8 @@ func _input(event: InputEvent) -> void:
 				if slot.idx != idx:
 					return
 				
+				# checks the item type, and then incrementing the values to track the current 
+				# objects being sucessfully placed, this is used in the tracking list ( List.tscn )
 				match item_type:
 					0: ManagerGame.global_main_ref.shelf.milk += 1
 					1: ManagerGame.global_main_ref.shelf.bread += 1

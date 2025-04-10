@@ -44,6 +44,7 @@ func generate_level():
 			var item = load('res://actors/DraggableItem.tscn').instantiate()
 			item.item_type = values[i]
 			
+			# this is used in tracking the items
 			match item.item_type:
 				0: milk_max += 1
 				1: bread_max += 1
