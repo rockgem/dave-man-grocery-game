@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 
 var item_type: int
+var idx = -1
 
 var first_slot_detected: Slot
 var is_dragging = false
@@ -14,7 +15,7 @@ func _ready() -> void:
 			$Sprite2D.offset.y -= 16.0
 		1: $Sprite2D.texture = load('res://reso/items/bread.tres')
 		2: $Sprite2D.texture = load('res://reso/items/strawberry.tres')
-		3: $Sprite2D.texture = load('res://reso/items/sugar.tres')
+		3: $Sprite2D.texture = load('res://reso/items/flour.tres')
 		5:
 			$Sprite2D.texture = load('res://reso/items/orange.tres')
 			$Sprite2D.offset.y =- 26.0
@@ -48,6 +49,10 @@ func _input(event: InputEvent) -> void:
 			
 			
 			if slot:
+				# checks if the index of the slot is assigned to the index of this item
+				if slot.idx != idx:
+					return
+				
 				slot.put_item(item_type)
 				ManagerGame.food_placed_on_shelf.emit()
 				

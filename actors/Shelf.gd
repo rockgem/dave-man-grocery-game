@@ -13,6 +13,8 @@ func generate_level():
 	var values = [0, 1, 2, 3, 5]
 	values.shuffle()
 	
+	var inx_count = 0
+	
 	for i in 3:
 		var rand_amount = randi_range(1, 5)
 		var left = 5 - rand_amount
@@ -30,6 +32,28 @@ func generate_level():
 			item.item_type = values[i]
 			
 			ManagerGame.global_main_ref.spawn_obj(item, p)
+	
+	# assign indexes
+	var count = 0
+	for slot in get_tree().get_nodes_in_group("Slot"):
+		slot.idx = count
+		
+		count += 1
+	
+	var slots = get_tree().get_nodes_in_group("Slot")
+	var vacants = []
+	
+	for slot in slots:
+		if slot.item_type == slot.ITEM_TYPE.VACANT:
+			vacants.append(slot)
+	
+	# assigns the item's indexes to the vacant slot's index
+	# this way, only a certain item can be inserted into a certain slot! ( see DraggableItem.gd )
+	count = 0
+	for item in get_tree().get_nodes_in_group("DraggableItem"):
+		item.idx = vacants[count].idx
+		
+		count += 1
 
 
 func has_vacant_slots() -> bool:

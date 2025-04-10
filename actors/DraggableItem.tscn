@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_na0ap"]
 radius = 7.07107
 
-[node name="DraggableItem" type="CharacterBody2D"]
+[node name="DraggableItem" type="CharacterBody2D" groups=["DraggableItem"]]
 collision_layer = 8
 script = ExtResource("1_na0ap")
 

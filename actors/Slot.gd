@@ -7,14 +7,14 @@ enum ITEM_TYPE{
 	MILK, # 0
 	BREAD, # 1
 	STRAWBERRY, # 2
-	SUGAR, # 3
+	FLOUR, # 3
 	VACANT, # 4
 	ORANGE # 5
 }
 
 
 @export var item_type = ITEM_TYPE.VACANT
-
+var idx = -1
 
 func _ready() -> void:
 	refresh_display()
