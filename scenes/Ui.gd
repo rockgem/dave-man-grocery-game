@@ -34,3 +34,9 @@ func on_game_over(is_win: bool):
 	i.is_win = is_win
 	
 	pop_to_ui(i)
+
+
+func _on_list_pressed() -> void:
+	var i = load('res://actors/ui/ListView.tscn').instantiate()
+	
+	pop_to_ui(i)

@@ -49,6 +49,20 @@ offset_top = -8.0
 offset_right = -5.0
 offset_bottom = 32.0
 
+[node name="Organization" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 44.0
+offset_right = 89.0
+offset_bottom = 67.0
+text = "10/10"
+
+[node name="TextureRect" type="TextureRect" parent="Organization"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = -8.0
+offset_right = -5.0
+offset_bottom = 32.0
+
 [node name="Time" type="Label" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
@@ -73,4 +87,19 @@ process_mode = 1
 wait_time = 60.0
 autostart = true
 
+[node name="List" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -44.0
+offset_right = -12.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Grocery List"
+
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="pressed" from="List" to="." method="_on_list_pressed"]
