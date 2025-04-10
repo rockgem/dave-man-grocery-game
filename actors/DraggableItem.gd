@@ -53,6 +53,13 @@ func _input(event: InputEvent) -> void:
 				if slot.idx != idx:
 					return
 				
+				match item_type:
+					0: ManagerGame.global_main_ref.shelf.milk += 1
+					1: ManagerGame.global_main_ref.shelf.bread += 1
+					2: ManagerGame.global_main_ref.shelf.jam += 1
+					3: ManagerGame.global_main_ref.shelf.flour += 1
+					5: ManagerGame.global_main_ref.shelf.juice += 1
+				
 				slot.put_item(item_type)
 				ManagerGame.food_placed_on_shelf.emit()
 				

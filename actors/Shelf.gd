@@ -1,4 +1,17 @@
 extends Sprite2D
+class_name Shelf
+
+var bread = 0
+var milk = 0
+var flour = 0
+var juice = 0
+var jam = 0
+
+var bread_max = 0
+var milk_max = 0
+var flour_max = 0
+var juice_max = 0
+var jam_max = 0
 
 
 func _ready() -> void:
@@ -30,6 +43,13 @@ func generate_level():
 			
 			var item = load('res://actors/DraggableItem.tscn').instantiate()
 			item.item_type = values[i]
+			
+			match item.item_type:
+				0: milk_max += 1
+				1: bread_max += 1
+				2: jam_max += 1
+				3: flour_max += 1
+				5: juice_max += 1
 			
 			ManagerGame.global_main_ref.spawn_obj(item, p)
 	

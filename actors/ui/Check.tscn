@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyo15m3u40g6a"]
+
+[ext_resource type="Texture2D" uid="uid://brq0ivyg3d2xf" path="res://art/circle-check.png" id="1_loinq"]
+[ext_resource type="Script" uid="uid://bywie4cjjtxu0" path="res://actors/ui/Check.gd" id="2_e12ag"]
+
+[node name="Check" type="TextureRect"]
+modulate = Color(0.593578, 0.799229, 0.478211, 1)
+custom_minimum_size = Vector2(26, 26)
+offset_right = 26.0
+offset_bottom = 26.0
+texture = ExtResource("1_loinq")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_e12ag")

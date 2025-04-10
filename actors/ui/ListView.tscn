@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://22qwhhl0w0nu"]
+[gd_scene load_steps=5 format=3 uid="uid://22qwhhl0w0nu"]
 
 [ext_resource type="Script" uid="uid://bqs588ed0gpv2" path="res://actors/ui/ListView.gd" id="1_1sx33"]
 [ext_resource type="Texture2D" uid="uid://c45pbxuiknfqj" path="res://art/grocery list2.png" id="2_idp0a"]
 [ext_resource type="Texture2D" uid="uid://cwnhhef13dpdb" path="res://art/circle-dashed-x.png" id="3_6klcl"]
+[ext_resource type="PackedScene" uid="uid://cyo15m3u40g6a" path="res://actors/ui/Check.tscn" id="4_3e11s"]
 
 [node name="ListView" type="Control"]
 layout_mode = 3
@@ -18,9 +19,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
+offset_left = -12.0
 offset_top = 23.0
-offset_right = -369.0
+offset_right = -394.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -41,5 +42,120 @@ texture_hover = ExtResource("3_6klcl")
 texture_focused = ExtResource("3_6klcl")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Bread" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 128.0
+offset_right = 190.0
+offset_bottom = 154.0
+theme_override_constants/separation = 0
+
+[node name="Check" parent="TextureRect/Bread" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check2" parent="TextureRect/Bread" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check3" parent="TextureRect/Bread" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check4" parent="TextureRect/Bread" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check5" parent="TextureRect/Bread" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Milk" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 164.0
+offset_right = 204.0
+offset_bottom = 190.0
+theme_override_constants/separation = 0
+
+[node name="Check" parent="TextureRect/Milk" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check2" parent="TextureRect/Milk" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check3" parent="TextureRect/Milk" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check4" parent="TextureRect/Milk" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check5" parent="TextureRect/Milk" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Jam" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 201.0
+offset_right = 204.0
+offset_bottom = 227.0
+theme_override_constants/separation = 0
+
+[node name="Check" parent="TextureRect/Jam" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check2" parent="TextureRect/Jam" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check3" parent="TextureRect/Jam" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check4" parent="TextureRect/Jam" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check5" parent="TextureRect/Jam" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Juice" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 238.0
+offset_right = 204.0
+offset_bottom = 264.0
+theme_override_constants/separation = 0
+
+[node name="Check" parent="TextureRect/Juice" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check2" parent="TextureRect/Juice" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check3" parent="TextureRect/Juice" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check4" parent="TextureRect/Juice" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check5" parent="TextureRect/Juice" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Flour" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 273.0
+offset_right = 204.0
+offset_bottom = 299.0
+theme_override_constants/separation = 0
+
+[node name="Check" parent="TextureRect/Flour" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check2" parent="TextureRect/Flour" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check3" parent="TextureRect/Flour" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check4" parent="TextureRect/Flour" instance=ExtResource("4_3e11s")]
+layout_mode = 2
+
+[node name="Check5" parent="TextureRect/Flour" instance=ExtResource("4_3e11s")]
+layout_mode = 2
 
 [connection signal="pressed" from="TextureRect/Close" to="." method="_on_close_pressed"]
