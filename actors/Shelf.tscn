@@ -30,7 +30,7 @@ position = Vector2(35, -55)
 position = Vector2(71, -55)
 
 [node name="Line2" type="Node2D" parent="Slots"]
-position = Vector2(0, 53)
+position = Vector2(0, 51)
 
 [node name="Slot" parent="Slots/Line2" instance=ExtResource("2_ao3xq")]
 position = Vector2(-72, -58)
@@ -48,7 +48,7 @@ position = Vector2(35, -58)
 position = Vector2(71, -58)
 
 [node name="Line3" type="Node2D" parent="Slots"]
-position = Vector2(0, 102)
+position = Vector2(0, 100)
 
 [node name="Slot" parent="Slots/Line3" instance=ExtResource("2_ao3xq")]
 position = Vector2(-72, -58)
