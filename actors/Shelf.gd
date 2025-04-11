@@ -76,6 +76,7 @@ func generate_level():
 	
 	for item in items:
 		item.idx = vacants[count].idx
+		vacants[count].set_item_shadow(item.get_node('Sprite2D').texture)
 		
 		count += 1
 

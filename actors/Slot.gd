@@ -31,6 +31,7 @@ func refresh_display():
 		$Sprite2D4.texture = load("res://reso/items/%s.tres" % ITEM_TYPE.find_key(item_type))
 	
 	$Sprite2D.modulate.a = 1.0
+	$Sprite2D.modulate = Color.WHITE
 
 
 func put_item(item_type: int):
@@ -39,17 +40,24 @@ func put_item(item_type: int):
 	refresh_display()
 
 
-func highlight(texture):
-	if item_type != ITEM_TYPE.VACANT:
-		return
-	
+func set_item_shadow(texture):
 	$Sprite2D.texture = texture
+	$Sprite2D.modulate = Color.BLACK
 	$Sprite2D.modulate.a = .5
-
-
-func remove_highlight():
-	if item_type != ITEM_TYPE.VACANT:
-		return
 	
-	$Sprite2D.texture = null
-	$Sprite2D.modulate.a = 1.0
+
+
+#func highlight(texture):
+	#if item_type != ITEM_TYPE.VACANT:
+		#return
+	#
+	#$Sprite2D.texture = texture
+	#$Sprite2D.modulate.a = .5
+#
+#
+#func remove_highlight():
+	#if item_type != ITEM_TYPE.VACANT:
+		#return
+	#
+	#$Sprite2D.texture = null
+	#$Sprite2D.modulate.a = 1.0

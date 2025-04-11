@@ -83,15 +83,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if $Area2D.get_overlapping_areas().is_empty() == false and is_dragging:
-		if first_slot_detected:
-			first_slot_detected.remove_highlight()
+		#if first_slot_detected:
+			#first_slot_detected.remove_highlight()
 		
 		first_slot_detected = $Area2D.get_overlapping_areas()[0]
 		
-		first_slot_detected.highlight($Sprite2D.texture)
+		#first_slot_detected.highlight($Sprite2D.texture)
 	else:
-		if first_slot_detected:
-			first_slot_detected.remove_highlight()
+		#if first_slot_detected:
+			#first_slot_detected.remove_highlight()
 		
 		first_slot_detected = null
 
