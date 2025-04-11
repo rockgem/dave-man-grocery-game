@@ -75,8 +75,9 @@ func generate_level():
 	items.shuffle()
 	
 	for item in items:
-		item.idx = vacants[count].idx
+		#item.idx = vacants[count].idx
 		vacants[count].set_item_shadow(item.get_node('Sprite2D').texture)
+		vacants[count].item_type_accepting = item.item_type
 		
 		count += 1
 

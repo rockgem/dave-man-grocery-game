@@ -6,6 +6,11 @@ func _ready() -> void:
 	ManagerGame.game_over.connect(on_game_over)
 	
 	ManagerGame.global_ui_ref = self
+	
+	await get_tree().physics_frame
+	await get_tree().create_timer(1.0).timeout
+	
+	add_child(load('res://actors/ui/ListView.tscn').instantiate())
 
 
 func _physics_process(delta: float) -> void:

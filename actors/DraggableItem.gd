@@ -36,6 +36,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch and event.pressed and is_dragging == false:
 		is_dragging = true
 	
+	
+	# this runs after the player releases click, essentially trying to put the item into the slot
 	if event is InputEventScreenTouch and !event.pressed and is_dragging:
 		is_dragging = false
 		
@@ -52,7 +54,7 @@ func _input(event: InputEvent) -> void:
 			
 			if slot:
 				# checks if the index of the slot is assigned to the index of this item
-				if slot.idx != idx:
+				if slot.item_type_accepting != item_type:
 					return
 				
 				# checks the item type, and then incrementing the values to track the current 

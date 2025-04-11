@@ -14,6 +14,7 @@ enum ITEM_TYPE{
 
 
 @export var item_type = ITEM_TYPE.VACANT
+var item_type_accepting: int = -1
 var idx = -1
 
 func _ready() -> void:
